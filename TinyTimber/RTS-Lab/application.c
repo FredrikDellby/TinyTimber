@@ -9,15 +9,26 @@
 #define MAX_CALLS 500
 #define BUF_SIZE 30
 #define BUF_INIT "000000000000000000000000000000"
-#define MIN_INTER_ARRIVAL_TIME MSEC(200)
+#define MIN_INTER_ARRIVAL_TIME MSEC(150)
+
+typedef struct {
+	Object super;
+	CANMsg msgQueue[10];
+	int first, last;
+} CANBuffer;
+
+typedef struct {
+	Object super;
+	CANBuffer *canBuf;
+} CANMsgPrinter;
+
+void canMsgPrint(CANMsgPrinter*, int);
 
 typedef struct {
     Object super;
 	Player *player;
     char buf[BUF_SIZE];
 	int count, buttonPressedFirstTime;
-	Time lastTimePressed;
-	CANMsg msgQueue[10], *topOfQueue, *endOfQueue;
 } App;
 
 void setPlayer(App*, Player*);
@@ -25,23 +36,42 @@ void reader(App*, int);
 void receiver(App*, int);
 void buttonPressed(App*, int);
 
-App app = {initObject(), NULL, BUF_INIT, 0, 0, MSEC(0)};
+
+App app = {initObject(), NULL, BUF_INIT, 0, 0, NULL};
 Player player = initPlayer();
 ToneTask toneTask = initToneTask();
 Serial sci0 = initSerial(SCI_PORT0, &app, reader);
 Can can0 = initCan(CAN_PORT0, &app, receiver);
 SysIO sysIO0 = initSysIO(SIO_PORT0, &app, buttonPressed);
 Timer tim0 = initTimer();
+CANBuffer canBuf;
+
+void canMsgPrint(CANMsgPrinter *self, int unused) {
+	CANMsg msg = self->canBuf.msgQueue[self->canBuf.last];
+	self->canBuf.last++;
+	snprintf(app.buf, BUF_SIZE, "Can msg ID: %d", msg.msgId);
+	SCI_WRITE(&sci0, app.buf);
+}
+
 
 void setPlayer(App *self, Player *player) {
 	self->player = player;
 }
 
+void setCANBuffer(App *self, CANBuffer *canBuf) {
+	self->canBuf = canBuf;
+}
+
 void receiver(App *self, int unused) {
     CANMsg msg;
     CAN_RECEIVE(&can0, &msg);
-    SCI_WRITE(&sci0, "Can msg received: ");
-    SCI_WRITE(&sci0, msg.buff);
+	if ((canBuf.first + 1) & 10 != canBuf.last) {
+		canBuf.msgQueue[canBuf.last] = msg;
+		canBuf.first++;
+	}
+	
+    //SCI_WRITE(&sci0, "Can msg received: ");
+    //SCI_WRITE(&sci0, msg.buff);
 }
 
 void reader(App *self, int c) {
@@ -87,14 +117,13 @@ void buttonPressed(App *self, int unused){
 
 	if (self->buttonPressedFirstTime == 0) {
 		self->buttonPressedFirstTime = 1;
-		self->lastTimePressed = CURRENT_OFFSET();
 		T_RESET(&tim0);
 	} else {
-		interArrivalTime = T_SAMPLE(&tim0) + CURRENT_OFFSET() - self->lastTimePressed;
+		interArrivalTime = T_SAMPLE(&tim0);
+		T_RESET(&tim0);
 		if (interArrivalTime > MIN_INTER_ARRIVAL_TIME) {
 			snprintf(self->buf, BUF_SIZE, "Inter-arrival time: %d ms\n", MSEC_OF(interArrivalTime));
 			SCI_WRITE(&sci0, self->buf);
-			self->lastTimePressed = T_SAMPLE(&tim0) + CURRENT_OFFSET();
 		}
 		
 	}
@@ -123,6 +152,7 @@ void startApp(App *self, int arg) {
 
 int main() {
 	setPlayer(&app, &player);
+	setCANBuffer(&app, &canBuf);
 	setToneTask(&player, &toneTask);
     INSTALL(&sci0, sci_interrupt, SCI_IRQ0);
 	INSTALL(&can0, can_interrupt, CAN_IRQ0);
