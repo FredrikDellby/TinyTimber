@@ -17,6 +17,7 @@ typedef struct {
     char buf[BUF_SIZE];
 	int count, buttonPressedFirstTime;
 	Time lastTimePressed;
+	CANMsg msgQueue[10], *topOfQueue, *endOfQueue;
 } App;
 
 void setPlayer(App*, Player*);
