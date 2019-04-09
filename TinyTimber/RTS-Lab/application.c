@@ -18,13 +18,7 @@ typedef struct {
 	int first, last;
 } CANBuffer;
 
-typedef struct {
-	Object super;
-	CANBuffer *canBuf;
-} CANMsgPrinter;
-#define initCANMsgPrinter() {initObject(), NULL}
-
-void canMsgPrint(CANMsgPrinter*, int);
+void printCANMsg(CANBuffer*, int);
 
 typedef struct {
     Object super;
@@ -50,15 +44,13 @@ Timer tim0 = initTimer();
 CANMsgPrinter canMsgPrinter = initCANMsgPrinter();
 CANBuffer canBuf;
 
-void canMsgPrint(CANMsgPrinter *self, int unused) {
-	CANMsg msg = self->canBuf->msgQueue[self->canBuf->last];
-	self->canBuf->last++;
+void printCANMsg(CANBuffer *self, int unused) {
+	CANMsg msg = self->msgQueue[self->last];
 	snprintf(app.buf, BUF_SIZE, "Can msg ID: %d", msg.msgId);
 	SCI_WRITE(&sci0, app.buf);
-}
-
-void setCANBuffer(CANMsgPrinter *self, CANBuffer *canBuf) {
-	self->canBuf = canBuf;
+	if (self->last++ <= self->first) {
+		
+	}
 }
 
 void setPlayer(App *self, Player *player) {
