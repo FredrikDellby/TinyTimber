@@ -15,16 +15,17 @@
 typedef struct {
 	Object super;
 	CANMsg msgQueue[10];
-	int first, last;
+	int first, last, size;
 } CANBuffer;
 
+void canBufferInit(CANBuffer*);
 void printCANMsg(CANBuffer*, int);
 
 typedef struct {
     Object super;
 	Player *player;
     char buf[BUF_SIZE];
-	int count, buttonPressedFirstTime;
+	int count, buttonPressedFirstTime, firstCANMsgReceived;
 	uchar msgIndex;
 } App;
 
@@ -33,23 +34,29 @@ void reader(App*, int);
 void receiver(App*, int);
 void buttonPressed(App*, int);
 
-
-App app = {initObject(), NULL, BUF_INIT, 0, 0, 0};
+App app = {initObject(), NULL, BUF_INIT, 0, 0, 0, 0};
 Player player = initPlayer();
 ToneTask toneTask = initToneTask();
 Serial sci0 = initSerial(SCI_PORT0, &app, reader);
 Can can0 = initCan(CAN_PORT0, &app, receiver);
 SysIO sysIO0 = initSysIO(SIO_PORT0, &app, buttonPressed);
 Timer tim0 = initTimer();
-CANMsgPrinter canMsgPrinter = initCANMsgPrinter();
+Timer tim1 = initTimer();
 CANBuffer canBuf;
 
+void canBufferInit(CANBuffer *self) {
+	self->first = 0;
+	self->last = 0;
+	self->size = 0;
+}
+
 void printCANMsg(CANBuffer *self, int unused) {
-	CANMsg msg = self->msgQueue[self->last];
+	CANMsg msg = self->msgQueue[self->first++];
+	self->size--;
 	snprintf(app.buf, BUF_SIZE, "Can msg ID: %d", msg.msgId);
 	SCI_WRITE(&sci0, app.buf);
-	if (self->last++ <= self->first) {
-		
+	if (self->size > 0) {
+		SEND(MSEC(1000), MSEC(100), self, printCANMsg, unused);
 	}
 }
 
@@ -59,11 +66,21 @@ void setPlayer(App *self, Player *player) {
 
 void receiver(App *self, int unused) {
     CANMsg msg;
-    CAN_RECEIVE(&can0, &msg);
-	//if ((canBuf.first + 1) & 10 != canBuf.last) {
-	//	canBuf.msgQueue[canBuf.last] = msg;
-	//	canBuf.first++;
-	//}
+	Time interArrivalTime;
+	CAN_RECEIVE(&can0, &msg);
+	if (firstCANMsgReceived == 0) {
+		firstCANMsgReceived = 1;
+		T_RESET(&tim1);
+	}
+	
+	T_SAMPLE(&tim1);
+    
+	if (canBuf.size > 0) {
+		canBuf.msgQueue[++canBuf.last] = msg;
+	} else if (1) {
+		canBuf.msgQueue[++canBuf.last] = msg;
+		SEND(MSEC(1000), MSEC(100), self, printCANMsg, unused);
+	}
 	
     SCI_WRITE(&sci0, "Can msg received: ");
     SCI_WRITE(&sci0, msg.buff);
@@ -133,6 +150,7 @@ void startApp(App *self, int arg) {
     CANMsg msg;
 
     CAN_INIT(&can0);
+	canBufferInit(&canBuf);
     SCI_INIT(&sci0);
 	SIO_INIT(&sysIO0);
     SCI_WRITE(&sci0, "Hello, hello...\n");
