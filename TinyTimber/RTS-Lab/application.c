@@ -45,6 +45,7 @@ Timer tim0 = initTimer();
 Timer tim1 = initTimer();
 CANBuffer canBuf;
 
+// CANBuffer methods
 void canBufferInit(CANBuffer *self) {
 	self->first = 0;
 	self->last = 0;
@@ -65,6 +66,7 @@ void setPlayer(App *self, Player *player) {
 	self->player = player;
 }
 
+// App methods
 void printCANMsg(App *self, CANMsg *msg) {
 	snprintf(self->buf, BUF_SIZE, "Can msg ID: %d\n", msg->msgId);
 	SCI_WRITE(&sci0, self->buf);
@@ -149,7 +151,7 @@ void buttonPressed(App *self, int unused){
 		msg.msgId = self->msgIndex++;
 		msg.nodeId = 1;
 		itoa(MSEC_OF(interArrivalTime), msg.buff, 10);
-		msg.length = (uchar) strlen(msg.buff);
+		msg.length = strlen(msg.buff);
 		CAN_SEND(&can0, &msg);
 	}
 }
