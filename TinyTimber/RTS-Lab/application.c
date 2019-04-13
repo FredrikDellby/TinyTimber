@@ -70,7 +70,7 @@ void setPlayer(App *self, Player *player) {
 void printCANMsg(App *self, CANMsg *msg) {
 	snprintf(self->buf, BUF_SIZE, "Can msg ID: %d\n", msg->msgId);
 	SCI_WRITE(&sci0, self->buf);
-	snprintf(self->buf, BUF_SIZE, "Can msg text: &s\n", msg->buff);
+	snprintf(self->buf, BUF_SIZE, "Can msg text: %s\n", msg->buff);
 	SCI_WRITE(&sci0, self->buf);
 }
 
@@ -136,7 +136,8 @@ void reader(App *self, int c) {
 
 void buttonPressed(App *self, int unused){
 	Time interArrivalTime;
-
+	CANMsg msg;
+	//char *ptr1 = self->buf, *ptr2 = msg.buff;
 	if (self->buttonPressedFirstTime == 0) {
 		self->buttonPressedFirstTime = 1;
 		T_RESET(&tim0);
@@ -147,24 +148,29 @@ void buttonPressed(App *self, int unused){
 			snprintf(self->buf, BUF_SIZE, "Inter-arrival time: %d ms\n", MSEC_OF(interArrivalTime));
 			SCI_WRITE(&sci0, self->buf);
 		}
-		CANMsg msg;
 		msg.msgId = self->msgIndex++;
 		msg.nodeId = 1;
-		itoa(MSEC_OF(interArrivalTime), msg.buff, 10);
+		snprintf(msg.buff, BUF_SIZE, "%d", MSEC_OF(interArrivalTime));
+		/**
+		while (*ptr1 != '\0') {
+			SCI_WRITECHAR(&sci0, *ptr1);
+			*ptr2++ = ptr1++;
+		}
+		SCI_WRITECHAR(&sci0, '\n');
+		*/
 		msg.length = strlen(msg.buff);
 		CAN_SEND(&can0, &msg);
 	}
 }
 
 void startApp(App *self, int arg) {
-    CANMsg msg;
-
+    //CANMsg msg;
     CAN_INIT(&can0);
 	canBufferInit(&canBuf);
     SCI_INIT(&sci0);
 	SIO_INIT(&sysIO0);
     SCI_WRITE(&sci0, "Hello, hello...\n");
-
+	/**
     msg.msgId = 1;
     msg.nodeId = 1;
     msg.length = 6;
@@ -175,6 +181,7 @@ void startApp(App *self, int arg) {
     msg.buff[4] = 'o';
     msg.buff[5] = 0;
     CAN_SEND(&can0, &msg);
+	*/
 	//ASYNC(&player, startPlayer, 0);
 }
 
