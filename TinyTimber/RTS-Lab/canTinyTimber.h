@@ -10,7 +10,7 @@ typedef struct {
 	uchar msgId;  //Valid values: 0-127
 	uchar nodeId; //Valid values: 0-15
 	uchar length;
-	uchar buff[8];
+	uchar buff[9];
 } CANMsg;
 
 #define CAN_BUFSIZE 8

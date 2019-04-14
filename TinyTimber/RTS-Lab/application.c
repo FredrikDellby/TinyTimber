@@ -1,3 +1,4 @@
+
 #include "TinyTimber.h"
 #include "sciTinyTimber.h"
 #include "canTinyTimber.h"
@@ -10,7 +11,7 @@
 #define MAX_CALLS 500
 #define BUF_SIZE 30
 #define BUF_INIT "000000000000000000000000000000"
-#define MIN_INTER_ARRIVAL_TIME MSEC(150)
+#define MIN_INTER_ARRIVAL_TIME 150
 
 typedef struct {
 	Object super;
@@ -25,8 +26,9 @@ typedef struct {
     Object super;
 	Player *player;
     char buf[BUF_SIZE];
-	int count, buttonPressedFirstTime, firstCANMsgReceived;
+	int count, buttonPressedFirstTime, firstCANMsgReceived, counter, t1, t2, t3;
 	uchar msgIndex;
+	
 } App;
 
 void setPlayer(App*, Player*);
@@ -74,8 +76,8 @@ void printCANMsg(App *self, CANMsg *msg) {
 	SCI_WRITE(&sci0, self->buf);
 }
 
-void receiver(App *self, int unused) {
-    CANMsg msg;
+void receiver(App *self, int unused) {     
+    CANMsg msg;      
 	Time interArrivalTime;
 	CAN_RECEIVE(&can0, &msg);
 	if (self->firstCANMsgReceived == 0) {
@@ -135,22 +137,59 @@ void reader(App *self, int c) {
 }
 
 void buttonPressed(App *self, int unused){
-	Time interArrivalTime;
+	int interArrivalTime = 0; 
+	int tempo = 0;
+	//sio_toggle(&sysIO0, 0);
 	CANMsg msg;
 	//char *ptr1 = self->buf, *ptr2 = msg.buff;
 	if (self->buttonPressedFirstTime == 0) {
 		self->buttonPressedFirstTime = 1;
 		T_RESET(&tim0);
+		
 	} else {
-		interArrivalTime = T_SAMPLE(&tim0);
+	
+		interArrivalTime = MSEC_OF(T_SAMPLE(&tim0));
+
 		T_RESET(&tim0);
 		if (interArrivalTime > MIN_INTER_ARRIVAL_TIME) {
-			snprintf(self->buf, BUF_SIZE, "Inter-arrival time: %d ms\n", MSEC_OF(interArrivalTime));
-			SCI_WRITE(&sci0, self->buf);
+		snprintf(self->buf, BUF_SIZE, "Counter: %d \n", self->counter);
+				SCI_WRITE(&sci0, self->buf);
+			if(self->counter == 0){
+				self->t1 = interArrivalTime;
+				snprintf(self->buf, BUF_SIZE, "T1: %d ms\n", self->t1);
+				SCI_WRITE(&sci0, self->buf);
+				self->counter++;
+			}
+			else if(self->counter == 1){
+				int sum = self->t1 - interArrivalTime;
+				snprintf(self->buf, BUF_SIZE, "sum: %d ms\n", sum);
+				SCI_WRITE(&sci0, self->buf);
+				if(self->t1 - interArrivalTime < 99){
+					self->t2 = interArrivalTime;
+					self->counter++;
+					snprintf(self->buf, BUF_SIZE, "T2: %d ms\n", self->t2);
+					SCI_WRITE(&sci0, self->buf);
+				}
+				else{
+					self->counter = 0;
+				}
+			}
+			else {
+				if(self->t2 - interArrivalTime < 99){
+					self->t3 = interArrivalTime;
+					tempo = 60000/((self->t1 + self->t2 + self->t3)/3); 
+					snprintf(self->buf, BUF_SIZE, "Tempo: %d BPM\n", tempo);
+					SCI_WRITE(&sci0, self->buf);
+					
+					
+				}
+			self->counter = 0;
+			
 		}
+	
 		msg.msgId = self->msgIndex++;
 		msg.nodeId = 1;
-		snprintf(msg.buff, BUF_SIZE, "%d", MSEC_OF(interArrivalTime));
+		snprintf(msg.buff, BUF_SIZE, "%d", interArrivalTime);
 		/**
 		while (*ptr1 != '\0') {
 			SCI_WRITECHAR(&sci0, *ptr1);
@@ -160,6 +199,7 @@ void buttonPressed(App *self, int unused){
 		*/
 		msg.length = strlen(msg.buff);
 		CAN_SEND(&can0, &msg);
+		}
 	}
 }
 
