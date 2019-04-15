@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="/home/hanna/Documents/TinyTimber/TinyTimber/TinyTimber.workspace">
+  <int Value="5" Name="m_selectedTab"/>
+  <wxString Value="/home/hanna/Documents/TinyTimber/TinyTimber/TinyTimber.workspace" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="/home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/application.c" Name="FileName"/>
+      <int Value="51" Name="FirstVisibleLine"/>
+      <int Value="63" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/startup.c" Name="FileName"/>
+      <int Value="13" Name="FirstVisibleLine"/>
+      <int Value="15" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/canTinyTimber.c" Name="FileName"/>
+      <int Value="84" Name="FirstVisibleLine"/>
+      <int Value="3" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/canTinyTimber.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="12" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/sciTinyTimber.c" Name="FileName"/>
+      <int Value="45" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/sciTinyTimber.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="14" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+  <wxString Value="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.inc;*.mm;*.m;*.xrc;*.plist;*.txt" Name="m_findInFilesMask"/>
+</Session>

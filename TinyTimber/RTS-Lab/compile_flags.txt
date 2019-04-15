@@ -1,0 +1,11 @@
+-I/home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/arm-none-eabi/include/c++/8.2.1
+-I/home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/arm-none-eabi/include/c++/8.2.1/arm-none-eabi
+-I/home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/arm-none-eabi/include/c++/8.2.1/backward
+-I/home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/lib/gcc/arm-none-eabi/8.2.1/include
+-I/home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/lib/gcc/arm-none-eabi/8.2.1/include-fixed
+-I/home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/arm-none-eabi/include
+-I/home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab
+-I/home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/$(ProjectPath)
+-I/home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/$(ProjectPath)/device/inc
+-I/home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/$(ProjectPath)/driver/inc
+-DSTM32F40_41xxx
