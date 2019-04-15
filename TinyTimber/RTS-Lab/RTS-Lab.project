@@ -52,11 +52,10 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <File Name="../../../application.c"/>
+    <File Name="../../../application.h"/>
     <File Name="sioTinyTimber.h"/>
     <File Name="sioTinyTimber.c"/>
-    <File Name="player.h"/>
-    <File Name="player.c"/>
-    <File Name="application.c" ExcludeProjConfig=""/>
     <File Name="sciTinyTimber.c"/>
     <File Name="sciTinyTimber.h"/>
     <File Name="startup.c"/>
