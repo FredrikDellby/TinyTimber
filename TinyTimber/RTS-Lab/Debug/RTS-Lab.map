@@ -105,7 +105,7 @@ LOAD /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-
 LOAD /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a
 END GROUP
 
-.text           0x0000000020000000     0x84ec
+.text           0x0000000020000000     0x848c
                 0x0000000020000000                . = ALIGN (0x4)
  *(.start_section)
  .start_section
@@ -370,389 +370,389 @@ END GROUP
                 0x0000000020005794                vect_SVCall
                 0x0000000020005798                vect_PendSV
  .text          0x0000000020005888      0x32c ./Debug/startup.c.o
- .text          0x0000000020005bb4      0x638 ./Debug/application.c.o
+ .text          0x0000000020005bb4      0x5fc ./Debug/application.c.o
                 0x0000000020005bb4                canBufferInit
                 0x0000000020005be0                runCANBufferTask
-                0x0000000020005c5c                setPlayer
-                0x0000000020005c78                printCANMsg
-                0x0000000020005cdc                receiver
-                0x0000000020005dd8                reader
-                0x0000000020005f04                buttonPressed
-                0x0000000020006118                startApp
-                0x0000000020006180                main
- .text          0x00000000200061ec      0x294 ./Debug/sciTinyTimber.c.o
-                0x0000000020006274                sci_init
-                0x000000002000631a                sci_write
-                0x000000002000636e                sci_writechar
-                0x00000000200063a4                sci_interrupt
- .text          0x0000000020006480      0x430 ./Debug/canTinyTimber.c.o
-                0x0000000020006508                can_init
-                0x00000000200065c8                can_interrupt
-                0x0000000020006744                can_receive
-                0x0000000020006806                can_send
- .text          0x00000000200068b0      0xca8 ./Debug/driver_src_stm32f4xx_rcc.c.o
-                0x00000000200068b0                RCC_DeInit
-                0x0000000020006920                RCC_HSEConfig
-                0x0000000020006948                RCC_WaitForHSEStartUp
-                0x0000000020006998                RCC_AdjustHSICalibrationValue
-                0x00000000200069d4                RCC_HSICmd
-                0x00000000200069f4                RCC_LSEConfig
-                0x0000000020006a38                RCC_LSICmd
-                0x0000000020006a58                RCC_PLLConfig
-                0x0000000020006a98                RCC_PLLCmd
-                0x0000000020006ab8                RCC_PLLI2SConfig
-                0x0000000020006ae4                RCC_PLLI2SCmd
-                0x0000000020006b04                RCC_PLLSAIConfig
-                0x0000000020006b38                RCC_PLLSAICmd
-                0x0000000020006b58                RCC_ClockSecuritySystemCmd
-                0x0000000020006b78                RCC_MCO1Config
-                0x0000000020006bb8                RCC_MCO2Config
-                0x0000000020006bf8                RCC_SYSCLKConfig
-                0x0000000020006c30                RCC_GetSYSCLKSource
-                0x0000000020006c50                RCC_HCLKConfig
-                0x0000000020006c88                RCC_PCLK1Config
-                0x0000000020006cc0                RCC_PCLK2Config
-                0x0000000020006cfc                RCC_GetClocksFreq
-                0x0000000020006e50                RCC_RTCCLKConfig
-                0x0000000020006eac                RCC_RTCCLKCmd
-                0x0000000020006ecc                RCC_BackupResetCmd
-                0x0000000020006eec                RCC_I2SCLKConfig
-                0x0000000020006f0c                RCC_SAIPLLI2SClkDivConfig
-                0x0000000020006f4c                RCC_SAIPLLSAIClkDivConfig
-                0x0000000020006f8c                RCC_SAIBlockACLKConfig
-                0x0000000020006fc8                RCC_SAIBlockBCLKConfig
-                0x0000000020007004                RCC_LTDCCLKDivConfig
-                0x0000000020007040                RCC_TIMCLKPresConfig
-                0x0000000020007060                RCC_AHB1PeriphClockCmd
-                0x00000000200070a0                RCC_AHB2PeriphClockCmd
-                0x00000000200070e0                RCC_AHB3PeriphClockCmd
-                0x0000000020007120                RCC_APB1PeriphClockCmd
-                0x0000000020007160                RCC_APB2PeriphClockCmd
-                0x00000000200071a0                RCC_AHB1PeriphResetCmd
-                0x00000000200071e0                RCC_AHB2PeriphResetCmd
-                0x0000000020007220                RCC_AHB3PeriphResetCmd
-                0x0000000020007260                RCC_APB1PeriphResetCmd
-                0x00000000200072a0                RCC_APB2PeriphResetCmd
-                0x00000000200072e0                RCC_AHB1PeriphClockLPModeCmd
-                0x0000000020007320                RCC_AHB2PeriphClockLPModeCmd
-                0x0000000020007360                RCC_AHB3PeriphClockLPModeCmd
-                0x00000000200073a0                RCC_APB1PeriphClockLPModeCmd
-                0x00000000200073e0                RCC_APB2PeriphClockLPModeCmd
-                0x0000000020007420                RCC_ITConfig
-                0x000000002000746c                RCC_GetFlagStatus
-                0x00000000200074e0                RCC_ClearFlag
-                0x0000000020007500                RCC_GetITStatus
-                0x0000000020007538                RCC_ClearITPendingBit
- .text          0x0000000020007558        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-atoi.o)
- .text          0x0000000020007558        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-snprintf.o)
- .text          0x0000000020007558       0x10 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strlen.o)
-                0x0000000020007558                strlen
- .text          0x0000000020007568        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strtol.o)
- .text          0x0000000020007568        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-ctype_.o)
- .text          0x0000000020007568        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
- .text          0x0000000020007568        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
- .text          0x0000000020007568        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
- *fill*         0x0000000020007568        0x8 
- .text          0x0000000020007570       0xa0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memchr.o)
-                0x0000000020007570                memchr
- .text          0x0000000020007610        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memcpy-stub.o)
- .text          0x0000000020007610        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memmove.o)
- .text          0x0000000020007610        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-freer.o)
- .text          0x0000000020007610        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
- .text          0x0000000020007610        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-reallocr.o)
- .text          0x0000000020007610        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-sbrkr.o)
- .text          0x0000000020007610        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
- .text          0x0000000020007610        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-msizer.o)
- .text          0x0000000020007610        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-reent.o)
- .text          0x0000000020007610        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x0000000020005c74                setPlayer
+                0x0000000020005c90                printCANMsg
+                0x0000000020005cf4                receiver
+                0x0000000020005df8                reader
+                0x0000000020005f24                buttonPressed
+                0x00000000200060dc                startApp
+                0x0000000020006144                main
+ .text          0x00000000200061b0      0x294 ./Debug/sciTinyTimber.c.o
+                0x0000000020006238                sci_init
+                0x00000000200062de                sci_write
+                0x0000000020006332                sci_writechar
+                0x0000000020006368                sci_interrupt
+ .text          0x0000000020006444      0x430 ./Debug/canTinyTimber.c.o
+                0x00000000200064cc                can_init
+                0x000000002000658c                can_interrupt
+                0x0000000020006708                can_receive
+                0x00000000200067ca                can_send
+ .text          0x0000000020006874      0xca8 ./Debug/driver_src_stm32f4xx_rcc.c.o
+                0x0000000020006874                RCC_DeInit
+                0x00000000200068e4                RCC_HSEConfig
+                0x000000002000690c                RCC_WaitForHSEStartUp
+                0x000000002000695c                RCC_AdjustHSICalibrationValue
+                0x0000000020006998                RCC_HSICmd
+                0x00000000200069b8                RCC_LSEConfig
+                0x00000000200069fc                RCC_LSICmd
+                0x0000000020006a1c                RCC_PLLConfig
+                0x0000000020006a5c                RCC_PLLCmd
+                0x0000000020006a7c                RCC_PLLI2SConfig
+                0x0000000020006aa8                RCC_PLLI2SCmd
+                0x0000000020006ac8                RCC_PLLSAIConfig
+                0x0000000020006afc                RCC_PLLSAICmd
+                0x0000000020006b1c                RCC_ClockSecuritySystemCmd
+                0x0000000020006b3c                RCC_MCO1Config
+                0x0000000020006b7c                RCC_MCO2Config
+                0x0000000020006bbc                RCC_SYSCLKConfig
+                0x0000000020006bf4                RCC_GetSYSCLKSource
+                0x0000000020006c14                RCC_HCLKConfig
+                0x0000000020006c4c                RCC_PCLK1Config
+                0x0000000020006c84                RCC_PCLK2Config
+                0x0000000020006cc0                RCC_GetClocksFreq
+                0x0000000020006e14                RCC_RTCCLKConfig
+                0x0000000020006e70                RCC_RTCCLKCmd
+                0x0000000020006e90                RCC_BackupResetCmd
+                0x0000000020006eb0                RCC_I2SCLKConfig
+                0x0000000020006ed0                RCC_SAIPLLI2SClkDivConfig
+                0x0000000020006f10                RCC_SAIPLLSAIClkDivConfig
+                0x0000000020006f50                RCC_SAIBlockACLKConfig
+                0x0000000020006f8c                RCC_SAIBlockBCLKConfig
+                0x0000000020006fc8                RCC_LTDCCLKDivConfig
+                0x0000000020007004                RCC_TIMCLKPresConfig
+                0x0000000020007024                RCC_AHB1PeriphClockCmd
+                0x0000000020007064                RCC_AHB2PeriphClockCmd
+                0x00000000200070a4                RCC_AHB3PeriphClockCmd
+                0x00000000200070e4                RCC_APB1PeriphClockCmd
+                0x0000000020007124                RCC_APB2PeriphClockCmd
+                0x0000000020007164                RCC_AHB1PeriphResetCmd
+                0x00000000200071a4                RCC_AHB2PeriphResetCmd
+                0x00000000200071e4                RCC_AHB3PeriphResetCmd
+                0x0000000020007224                RCC_APB1PeriphResetCmd
+                0x0000000020007264                RCC_APB2PeriphResetCmd
+                0x00000000200072a4                RCC_AHB1PeriphClockLPModeCmd
+                0x00000000200072e4                RCC_AHB2PeriphClockLPModeCmd
+                0x0000000020007324                RCC_AHB3PeriphClockLPModeCmd
+                0x0000000020007364                RCC_APB1PeriphClockLPModeCmd
+                0x00000000200073a4                RCC_APB2PeriphClockLPModeCmd
+                0x00000000200073e4                RCC_ITConfig
+                0x0000000020007430                RCC_GetFlagStatus
+                0x00000000200074a4                RCC_ClearFlag
+                0x00000000200074c4                RCC_GetITStatus
+                0x00000000200074fc                RCC_ClearITPendingBit
+ .text          0x000000002000751c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-atoi.o)
+ .text          0x000000002000751c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-snprintf.o)
+ .text          0x000000002000751c       0x10 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strlen.o)
+                0x000000002000751c                strlen
+ .text          0x000000002000752c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strtol.o)
+ .text          0x000000002000752c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-ctype_.o)
+ .text          0x000000002000752c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+ .text          0x000000002000752c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
+ .text          0x000000002000752c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ *fill*         0x000000002000752c        0x4 
+ .text          0x0000000020007530       0xa0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memchr.o)
+                0x0000000020007530                memchr
+ .text          0x00000000200075d0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memcpy-stub.o)
+ .text          0x00000000200075d0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memmove.o)
+ .text          0x00000000200075d0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-freer.o)
+ .text          0x00000000200075d0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
+ .text          0x00000000200075d0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-reallocr.o)
+ .text          0x00000000200075d0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-sbrkr.o)
+ .text          0x00000000200075d0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
+ .text          0x00000000200075d0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-msizer.o)
+ .text          0x00000000200075d0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-reent.o)
+ .text          0x00000000200075d0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
  *(.text.*)
- .text.atoi     0x0000000020007610        0x8 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-atoi.o)
-                0x0000000020007610                atoi
- .text._atoi_r  0x0000000020007618        0x8 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-atoi.o)
-                0x0000000020007618                _atoi_r
+ .text.atoi     0x00000000200075d0        0x8 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-atoi.o)
+                0x00000000200075d0                atoi
+ .text._atoi_r  0x00000000200075d8        0x8 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-atoi.o)
+                0x00000000200075d8                _atoi_r
  .text._snprintf_r
-                0x0000000020007620       0x5e /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-snprintf.o)
-                0x0000000020007620                _sniprintf_r
-                0x0000000020007620                _snprintf_r
- *fill*         0x000000002000767e        0x2 
+                0x00000000200075e0       0x5e /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-snprintf.o)
+                0x00000000200075e0                _sniprintf_r
+                0x00000000200075e0                _snprintf_r
+ *fill*         0x000000002000763e        0x2 
  .text.snprintf
-                0x0000000020007680       0x68 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-snprintf.o)
-                0x0000000020007680                snprintf
-                0x0000000020007680                sniprintf
+                0x0000000020007640       0x68 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-snprintf.o)
+                0x0000000020007640                snprintf
+                0x0000000020007640                sniprintf
  .text._strtol_l.isra.0
-                0x00000000200076e8       0xf0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strtol.o)
+                0x00000000200076a8       0xf0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strtol.o)
  .text._strtol_r
-                0x00000000200077d8        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strtol.o)
-                0x00000000200077d8                _strtol_r
+                0x0000000020007798        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strtol.o)
+                0x0000000020007798                _strtol_r
  .text.strtol_l
-                0x00000000200077dc       0x14 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strtol.o)
-                0x00000000200077dc                strtol_l
- .text.strtol   0x00000000200077f0       0x14 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strtol.o)
-                0x00000000200077f0                strtol
+                0x000000002000779c       0x14 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strtol.o)
+                0x000000002000779c                strtol_l
+ .text.strtol   0x00000000200077b0       0x14 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strtol.o)
+                0x00000000200077b0                strtol
  .text.__ssputs_r
-                0x0000000020007804       0xb6 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
-                0x0000000020007804                __ssputs_r
+                0x00000000200077c4       0xb6 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x00000000200077c4                __ssputs_r
  .text.__ssprint_r
-                0x00000000200078ba       0xf0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
-                0x00000000200078ba                __ssprint_r
- *fill*         0x00000000200079aa        0x2 
+                0x000000002000787a       0xf0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x000000002000787a                __ssprint_r
+ *fill*         0x000000002000796a        0x2 
  .text._svfprintf_r
-                0x00000000200079ac      0x1f0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
-                0x00000000200079ac                _svfprintf_r
-                0x00000000200079ac                _svfiprintf_r
+                0x000000002000796c      0x1f0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x000000002000796c                _svfprintf_r
+                0x000000002000796c                _svfiprintf_r
  .text._printf_common
-                0x0000000020007b9c       0xea /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000020007b9c                _printf_common
- *fill*         0x0000000020007c86        0x2 
+                0x0000000020007b5c       0xea /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000020007b5c                _printf_common
+ *fill*         0x0000000020007c46        0x2 
  .text._printf_i
-                0x0000000020007c88      0x228 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000020007c88                _printf_i
- .text.memcpy   0x0000000020007eb0       0x1c /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memcpy-stub.o)
-                0x0000000020007eb0                memcpy
- .text.memmove  0x0000000020007ecc       0x34 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memmove.o)
-                0x0000000020007ecc                memmove
- .text._free_r  0x0000000020007f00       0x9c /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-freer.o)
-                0x0000000020007f00                _free_r
+                0x0000000020007c48      0x228 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000020007c48                _printf_i
+ .text.memcpy   0x0000000020007e70       0x1c /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memcpy-stub.o)
+                0x0000000020007e70                memcpy
+ .text.memmove  0x0000000020007e8c       0x34 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memmove.o)
+                0x0000000020007e8c                memmove
+ .text._free_r  0x0000000020007ec0       0x9c /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-freer.o)
+                0x0000000020007ec0                _free_r
  .text._malloc_r
-                0x0000000020007f9c       0xb4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
-                0x0000000020007f9c                _malloc_r
+                0x0000000020007f5c       0xb4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000000020007f5c                _malloc_r
  .text._realloc_r
-                0x0000000020008050       0x4c /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-reallocr.o)
-                0x0000000020008050                _realloc_r
- .text._sbrk_r  0x000000002000809c       0x20 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-sbrkr.o)
-                0x000000002000809c                _sbrk_r
+                0x0000000020008010       0x4c /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-reallocr.o)
+                0x0000000020008010                _realloc_r
+ .text._sbrk_r  0x000000002000805c       0x20 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-sbrkr.o)
+                0x000000002000805c                _sbrk_r
  .text.__malloc_lock
-                0x00000000200080bc        0xc /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
-                0x00000000200080bc                __malloc_lock
+                0x000000002000807c        0xc /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
+                0x000000002000807c                __malloc_lock
  .text.__malloc_unlock
-                0x00000000200080c8        0xc /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
-                0x00000000200080c8                __malloc_unlock
+                0x0000000020008088        0xc /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
+                0x0000000020008088                __malloc_unlock
  .text._malloc_usable_size_r
-                0x00000000200080d4       0x10 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-msizer.o)
-                0x00000000200080d4                _malloc_usable_size_r
+                0x0000000020008094       0x10 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-msizer.o)
+                0x0000000020008094                _malloc_usable_size_r
  .text.cleanup_glue
-                0x00000000200080e4       0x1a /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-reent.o)
-                0x00000000200080e4                cleanup_glue
- *fill*         0x00000000200080fe        0x2 
+                0x00000000200080a4       0x1a /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-reent.o)
+                0x00000000200080a4                cleanup_glue
+ *fill*         0x00000000200080be        0x2 
  .text._reclaim_reent
-                0x0000000020008100       0xb8 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-reent.o)
-                0x0000000020008100                _reclaim_reent
+                0x00000000200080c0       0xb8 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-reent.o)
+                0x00000000200080c0                _reclaim_reent
  .text.__retarget_lock_init
-                0x00000000200081b8        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x00000000200081b8                __retarget_lock_init
+                0x0000000020008178        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x0000000020008178                __retarget_lock_init
  .text.__retarget_lock_init_recursive
-                0x00000000200081ba        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x00000000200081ba                __retarget_lock_init_recursive
+                0x000000002000817a        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x000000002000817a                __retarget_lock_init_recursive
  .text.__retarget_lock_close
-                0x00000000200081bc        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x00000000200081bc                __retarget_lock_close
+                0x000000002000817c        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x000000002000817c                __retarget_lock_close
  .text.__retarget_lock_close_recursive
-                0x00000000200081be        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x00000000200081be                __retarget_lock_close_recursive
+                0x000000002000817e        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x000000002000817e                __retarget_lock_close_recursive
  .text.__retarget_lock_acquire
-                0x00000000200081c0        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x00000000200081c0                __retarget_lock_acquire
+                0x0000000020008180        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x0000000020008180                __retarget_lock_acquire
  .text.__retarget_lock_acquire_recursive
-                0x00000000200081c2        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x00000000200081c2                __retarget_lock_acquire_recursive
+                0x0000000020008182        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x0000000020008182                __retarget_lock_acquire_recursive
  .text.__retarget_lock_try_acquire
-                0x00000000200081c4        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x00000000200081c4                __retarget_lock_try_acquire
+                0x0000000020008184        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x0000000020008184                __retarget_lock_try_acquire
  .text.__retarget_lock_try_acquire_recursive
-                0x00000000200081c8        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x00000000200081c8                __retarget_lock_try_acquire_recursive
+                0x0000000020008188        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x0000000020008188                __retarget_lock_try_acquire_recursive
  .text.__retarget_lock_release
-                0x00000000200081cc        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x00000000200081cc                __retarget_lock_release
+                0x000000002000818c        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x000000002000818c                __retarget_lock_release
  .text.__retarget_lock_release_recursive
-                0x00000000200081ce        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x00000000200081ce                __retarget_lock_release_recursive
+                0x000000002000818e        0x2 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x000000002000818e                __retarget_lock_release_recursive
  *(.rodata)
- .rodata        0x00000000200081d0       0x7d ./Debug/TinyTimber.c.o
- *fill*         0x000000002000824d        0x3 
- .rodata        0x0000000020008250       0x23 ./Debug/sioTinyTimber.c.o
- *fill*         0x0000000020008273        0x1 
- .rodata        0x0000000020008274       0x89 ./Debug/application.c.o
- *fill*         0x00000000200082fd        0x3 
- .rodata        0x0000000020008300       0xb2 ./Debug/canTinyTimber.c.o
+ .rodata        0x0000000020008190       0x7d ./Debug/TinyTimber.c.o
+ *fill*         0x000000002000820d        0x3 
+ .rodata        0x0000000020008210       0x23 ./Debug/sioTinyTimber.c.o
+ *fill*         0x0000000020008233        0x1 
+ .rodata        0x0000000020008234       0x69 ./Debug/application.c.o
+ *fill*         0x000000002000829d        0x3 
+ .rodata        0x00000000200082a0       0xb2 ./Debug/canTinyTimber.c.o
  *(.rodata*)
  .rodata._ctype_
-                0x00000000200083b2      0x101 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-ctype_.o)
-                0x00000000200083b2                _ctype_
- *fill*         0x00000000200084b3        0x1 
+                0x0000000020008352      0x101 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-ctype_.o)
+                0x0000000020008352                _ctype_
+ *fill*         0x0000000020008453        0x1 
  .rodata._global_impure_ptr
-                0x00000000200084b4        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
-                0x00000000200084b4                _global_impure_ptr
+                0x0000000020008454        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+                0x0000000020008454                _global_impure_ptr
  .rodata._svfprintf_r.str1.1
-                0x00000000200084b8       0x11 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x0000000020008458       0x11 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
  .rodata._printf_i.str1.1
-                0x00000000200084c9       0x22 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000020008469       0x22 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
  *(.glue_7)
- .glue_7        0x00000000200084eb        0x0 linker stubs
+ .glue_7        0x000000002000848b        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x00000000200084eb        0x0 linker stubs
-                0x00000000200084ec                . = ALIGN (0x4)
- *fill*         0x00000000200084eb        0x1 
+ .glue_7t       0x000000002000848b        0x0 linker stubs
+                0x000000002000848c                . = ALIGN (0x4)
+ *fill*         0x000000002000848b        0x1 
 
-.vfp11_veneer   0x00000000200084ec        0x0
- .vfp11_veneer  0x00000000200084ec        0x0 linker stubs
+.vfp11_veneer   0x000000002000848c        0x0
+ .vfp11_veneer  0x000000002000848c        0x0 linker stubs
 
-.v4_bx          0x00000000200084ec        0x0
- .v4_bx         0x00000000200084ec        0x0 linker stubs
+.v4_bx          0x000000002000848c        0x0
+ .v4_bx         0x000000002000848c        0x0 linker stubs
 
-.iplt           0x00000000200084ec        0x0
- .iplt          0x00000000200084ec        0x0 ./Debug/driver_src_stm32f4xx_syscfg.c.o
+.iplt           0x000000002000848c        0x0
+ .iplt          0x000000002000848c        0x0 ./Debug/driver_src_stm32f4xx_syscfg.c.o
 
-.rel.dyn        0x00000000200084ec        0x0
- .rel.iplt      0x00000000200084ec        0x0 ./Debug/driver_src_stm32f4xx_syscfg.c.o
+.rel.dyn        0x000000002000848c        0x0
+ .rel.iplt      0x000000002000848c        0x0 ./Debug/driver_src_stm32f4xx_syscfg.c.o
 
-.data           0x00000000200084ec      0x7c4
-                0x00000000200084ec                . = ALIGN (0x4)
+.data           0x000000002000848c      0x7c4
+                0x000000002000848c                . = ALIGN (0x4)
  *(.data)
- .data          0x00000000200084ec        0x0 ./Debug/driver_src_stm32f4xx_syscfg.c.o
- .data          0x00000000200084ec        0x0 ./Debug/driver_src_stm32f4xx_usart.c.o
- .data          0x00000000200084ec        0x0 ./Debug/driver_src_stm32f4xx_tim.c.o
- .data          0x00000000200084ec        0x0 ./Debug/driver_src_stm32f4xx_gpio.c.o
- .data          0x00000000200084ec        0x0 ./Debug/driver_src_stm32f4xx_dac.c.o
- .data          0x00000000200084ec        0x0 ./Debug/player.c.o
- .data          0x00000000200084ec        0x0 ./Debug/driver_src_stm32f4xx_can.c.o
- .data          0x00000000200084ec       0x24 ./Debug/TinyTimber.c.o
-                0x00000000200084ec                hex
-                0x0000000020008500                msgPool
-                0x0000000020008504                threadPool
-                0x0000000020008508                activeStack
-                0x000000002000850c                current
- .data          0x0000000020008510        0x0 ./Debug/driver_src_stm32f4xx_exti.c.o
- .data          0x0000000020008510        0x0 ./Debug/sioTinyTimber.c.o
- .data          0x0000000020008510       0x84 ./Debug/dispatch.s.o
- .data          0x0000000020008594        0x0 ./Debug/startup.c.o
- .data          0x0000000020008594      0x6a8 ./Debug/application.c.o
-                0x0000000020008594                app
-                0x00000000200085e0                player
-                0x000000002000876c                toneTask
-                0x0000000020008788                sci0
-                0x0000000020008ba8                can0
-                0x0000000020008c28                sysIO0
- .data          0x0000000020008c3c        0x0 ./Debug/sciTinyTimber.c.o
- .data          0x0000000020008c3c        0x0 ./Debug/canTinyTimber.c.o
- .data          0x0000000020008c3c       0x10 ./Debug/driver_src_stm32f4xx_rcc.c.o
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-atoi.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-snprintf.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strlen.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strtol.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-ctype_.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memchr.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memcpy-stub.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memmove.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-freer.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-reallocr.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-sbrkr.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-msizer.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-reent.o)
- .data          0x0000000020008c4c        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+ .data          0x000000002000848c        0x0 ./Debug/driver_src_stm32f4xx_syscfg.c.o
+ .data          0x000000002000848c        0x0 ./Debug/driver_src_stm32f4xx_usart.c.o
+ .data          0x000000002000848c        0x0 ./Debug/driver_src_stm32f4xx_tim.c.o
+ .data          0x000000002000848c        0x0 ./Debug/driver_src_stm32f4xx_gpio.c.o
+ .data          0x000000002000848c        0x0 ./Debug/driver_src_stm32f4xx_dac.c.o
+ .data          0x000000002000848c        0x0 ./Debug/player.c.o
+ .data          0x000000002000848c        0x0 ./Debug/driver_src_stm32f4xx_can.c.o
+ .data          0x000000002000848c       0x24 ./Debug/TinyTimber.c.o
+                0x000000002000848c                hex
+                0x00000000200084a0                msgPool
+                0x00000000200084a4                threadPool
+                0x00000000200084a8                activeStack
+                0x00000000200084ac                current
+ .data          0x00000000200084b0        0x0 ./Debug/driver_src_stm32f4xx_exti.c.o
+ .data          0x00000000200084b0        0x0 ./Debug/sioTinyTimber.c.o
+ .data          0x00000000200084b0       0x84 ./Debug/dispatch.s.o
+ .data          0x0000000020008534        0x0 ./Debug/startup.c.o
+ .data          0x0000000020008534      0x6a8 ./Debug/application.c.o
+                0x0000000020008534                app
+                0x0000000020008580                player
+                0x000000002000870c                toneTask
+                0x0000000020008728                sci0
+                0x0000000020008b48                can0
+                0x0000000020008bc8                sysIO0
+ .data          0x0000000020008bdc        0x0 ./Debug/sciTinyTimber.c.o
+ .data          0x0000000020008bdc        0x0 ./Debug/canTinyTimber.c.o
+ .data          0x0000000020008bdc       0x10 ./Debug/driver_src_stm32f4xx_rcc.c.o
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-atoi.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-snprintf.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strlen.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strtol.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-ctype_.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memchr.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memcpy-stub.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memmove.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-freer.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-reallocr.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-sbrkr.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-msizer.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-reent.o)
+ .data          0x0000000020008bec        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
  *(.data.*)
  .data._impure_ptr
-                0x0000000020008c4c        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
-                0x0000000020008c4c                _impure_ptr
+                0x0000000020008bec        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+                0x0000000020008bec                _impure_ptr
  .data.impure_data
-                0x0000000020008c50       0x60 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
-                0x0000000020008cb0                . = ALIGN (0x4)
+                0x0000000020008bf0       0x60 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+                0x0000000020008c50                . = ALIGN (0x4)
 
-.igot.plt       0x0000000020008cb0        0x0
- .igot.plt      0x0000000020008cb0        0x0 ./Debug/driver_src_stm32f4xx_syscfg.c.o
+.igot.plt       0x0000000020008c50        0x0
+ .igot.plt      0x0000000020008c50        0x0 ./Debug/driver_src_stm32f4xx_syscfg.c.o
 
-.bss            0x0000000020008cb0     0x841c
-                0x0000000020008cb0                . = ALIGN (0x4)
-                0x0000000020008cb0                _sbss = .
+.bss            0x0000000020008c50     0x841c
+                0x0000000020008c50                . = ALIGN (0x4)
+                0x0000000020008c50                _sbss = .
  *(.bss)
- .bss           0x0000000020008cb0        0x0 ./Debug/driver_src_stm32f4xx_syscfg.c.o
- .bss           0x0000000020008cb0        0x0 ./Debug/driver_src_stm32f4xx_usart.c.o
- .bss           0x0000000020008cb0        0x0 ./Debug/driver_src_stm32f4xx_tim.c.o
- .bss           0x0000000020008cb0        0x0 ./Debug/driver_src_stm32f4xx_gpio.c.o
- .bss           0x0000000020008cb0        0x0 ./Debug/driver_src_stm32f4xx_dac.c.o
- .bss           0x0000000020008cb0        0x0 ./Debug/player.c.o
- .bss           0x0000000020008cb0        0x0 ./Debug/driver_src_stm32f4xx_can.c.o
- .bss           0x0000000020008cb0       0x18 ./Debug/TinyTimber.c.o
-                0x0000000020008cb0                doIRQSchedule
-                0x0000000020008cb4                msgQ
-                0x0000000020008cb8                timerQ
-                0x0000000020008cbc                runAsHardware
-                0x0000000020008cc0                timestamp
-                0x0000000020008cc4                overflows
- .bss           0x0000000020008cc8        0x0 ./Debug/driver_src_stm32f4xx_exti.c.o
- .bss           0x0000000020008cc8        0x0 ./Debug/sioTinyTimber.c.o
- .bss           0x0000000020008cc8        0x0 ./Debug/dispatch.s.o
- .bss           0x0000000020008cc8        0x0 ./Debug/startup.c.o
- .bss           0x0000000020008cc8        0x8 ./Debug/application.c.o
-                0x0000000020008cc8                tim0
-                0x0000000020008ccc                tim1
- .bss           0x0000000020008cd0        0x0 ./Debug/sciTinyTimber.c.o
- .bss           0x0000000020008cd0        0x0 ./Debug/canTinyTimber.c.o
- .bss           0x0000000020008cd0        0x0 ./Debug/driver_src_stm32f4xx_rcc.c.o
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-atoi.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-snprintf.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strlen.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strtol.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-ctype_.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memchr.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memcpy-stub.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memmove.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-freer.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-reallocr.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-sbrkr.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-msizer.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-reent.o)
- .bss           0x0000000020008cd0        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+ .bss           0x0000000020008c50        0x0 ./Debug/driver_src_stm32f4xx_syscfg.c.o
+ .bss           0x0000000020008c50        0x0 ./Debug/driver_src_stm32f4xx_usart.c.o
+ .bss           0x0000000020008c50        0x0 ./Debug/driver_src_stm32f4xx_tim.c.o
+ .bss           0x0000000020008c50        0x0 ./Debug/driver_src_stm32f4xx_gpio.c.o
+ .bss           0x0000000020008c50        0x0 ./Debug/driver_src_stm32f4xx_dac.c.o
+ .bss           0x0000000020008c50        0x0 ./Debug/player.c.o
+ .bss           0x0000000020008c50        0x0 ./Debug/driver_src_stm32f4xx_can.c.o
+ .bss           0x0000000020008c50       0x18 ./Debug/TinyTimber.c.o
+                0x0000000020008c50                doIRQSchedule
+                0x0000000020008c54                msgQ
+                0x0000000020008c58                timerQ
+                0x0000000020008c5c                runAsHardware
+                0x0000000020008c60                timestamp
+                0x0000000020008c64                overflows
+ .bss           0x0000000020008c68        0x0 ./Debug/driver_src_stm32f4xx_exti.c.o
+ .bss           0x0000000020008c68        0x0 ./Debug/sioTinyTimber.c.o
+ .bss           0x0000000020008c68        0x0 ./Debug/dispatch.s.o
+ .bss           0x0000000020008c68        0x0 ./Debug/startup.c.o
+ .bss           0x0000000020008c68        0x8 ./Debug/application.c.o
+                0x0000000020008c68                tim0
+                0x0000000020008c6c                tim1
+ .bss           0x0000000020008c70        0x0 ./Debug/sciTinyTimber.c.o
+ .bss           0x0000000020008c70        0x0 ./Debug/canTinyTimber.c.o
+ .bss           0x0000000020008c70        0x0 ./Debug/driver_src_stm32f4xx_rcc.c.o
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-atoi.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-snprintf.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strlen.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strtol.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-ctype_.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memchr.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memcpy-stub.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memmove.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-freer.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-reallocr.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-sbrkr.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-msizer.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-reent.o)
+ .bss           0x0000000020008c70        0x0 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
  *(.bss.*)
  .bss.__malloc_free_list
-                0x0000000020008cd0        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
-                0x0000000020008cd0                __malloc_free_list
+                0x0000000020008c70        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000000020008c70                __malloc_free_list
  .bss.__malloc_sbrk_start
-                0x0000000020008cd4        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
-                0x0000000020008cd4                __malloc_sbrk_start
+                0x0000000020008c74        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000000020008c74                __malloc_sbrk_start
  *(COMMON)
- COMMON         0x0000000020008cd8        0x0 ./Debug/player.c.o
- COMMON         0x0000000020008cd8     0x8358 ./Debug/TinyTimber.c.o
-                0x0000000020008cd8                otable
-                0x0000000020008ce4                upcoming
-                0x0000000020008ce8                threads
-                0x0000000020008d38                mtable
-                0x0000000020008d44                thread0
-                0x0000000020008d58                messages
-                0x0000000020009028                __heap_end
-                0x0000000020009030                stacks
- COMMON         0x0000000020011030       0x8c ./Debug/application.c.o
-                0x0000000020011030                canBuf
- COMMON         0x00000000200110bc        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-reent.o)
-                0x00000000200110bc                errno
- COMMON         0x00000000200110c0        0x9 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x00000000200110c0                __lock___atexit_recursive_mutex
-                0x00000000200110c1                __lock___arc4random_mutex
-                0x00000000200110c2                __lock___env_recursive_mutex
-                0x00000000200110c3                __lock___sinit_recursive_mutex
-                0x00000000200110c4                __lock___malloc_recursive_mutex
-                0x00000000200110c5                __lock___at_quick_exit_mutex
-                0x00000000200110c6                __lock___dd_hash_mutex
-                0x00000000200110c7                __lock___tz_mutex
-                0x00000000200110c8                __lock___sfp_recursive_mutex
-                0x00000000200110cc                . = ALIGN (0x4)
- *fill*         0x00000000200110c9        0x3 
-                0x00000000200110cc                _ebss = .
-                0x00000000200110cc                PROVIDE (end = _ebss)
+ COMMON         0x0000000020008c78        0x0 ./Debug/player.c.o
+ COMMON         0x0000000020008c78     0x8358 ./Debug/TinyTimber.c.o
+                0x0000000020008c78                otable
+                0x0000000020008c84                upcoming
+                0x0000000020008c88                threads
+                0x0000000020008cd8                mtable
+                0x0000000020008ce4                thread0
+                0x0000000020008cf8                messages
+                0x0000000020008fc8                __heap_end
+                0x0000000020008fd0                stacks
+ COMMON         0x0000000020010fd0       0x8c ./Debug/application.c.o
+                0x0000000020010fd0                canBuf
+ COMMON         0x000000002001105c        0x4 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-reent.o)
+                0x000000002001105c                errno
+ COMMON         0x0000000020011060        0x9 /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x0000000020011060                __lock___atexit_recursive_mutex
+                0x0000000020011061                __lock___arc4random_mutex
+                0x0000000020011062                __lock___env_recursive_mutex
+                0x0000000020011063                __lock___sinit_recursive_mutex
+                0x0000000020011064                __lock___malloc_recursive_mutex
+                0x0000000020011065                __lock___at_quick_exit_mutex
+                0x0000000020011066                __lock___dd_hash_mutex
+                0x0000000020011067                __lock___tz_mutex
+                0x0000000020011068                __lock___sfp_recursive_mutex
+                0x000000002001106c                . = ALIGN (0x4)
+ *fill*         0x0000000020011069        0x3 
+                0x000000002001106c                _ebss = .
+                0x000000002001106c                PROVIDE (end = _ebss)
                 [!provide]                        PROVIDE (_end = _ebss)
 OUTPUT(./Debug/RTS-Lab.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000     0xb7be
+.debug_info     0x0000000000000000     0xb7b2
  .debug_info    0x0000000000000000      0x2c4 ./Debug/driver_src_stm32f4xx_syscfg.c.o
  .debug_info    0x00000000000002c4      0xa68 ./Debug/driver_src_stm32f4xx_usart.c.o
  .debug_info    0x0000000000000d2c     0x1e26 ./Debug/driver_src_stm32f4xx_tim.c.o
@@ -764,12 +764,12 @@ OUTPUT(./Debug/RTS-Lab.elf elf32-littlearm)
  .debug_info    0x00000000000063cc      0x383 ./Debug/driver_src_stm32f4xx_exti.c.o
  .debug_info    0x000000000000674f      0x961 ./Debug/sioTinyTimber.c.o
  .debug_info    0x00000000000070b0      0xae8 ./Debug/startup.c.o
- .debug_info    0x0000000000007b98     0x15a1 ./Debug/application.c.o
- .debug_info    0x0000000000009139      0x9d7 ./Debug/sciTinyTimber.c.o
- .debug_info    0x0000000000009b10      0xdba ./Debug/canTinyTimber.c.o
- .debug_info    0x000000000000a8ca      0xef4 ./Debug/driver_src_stm32f4xx_rcc.c.o
+ .debug_info    0x0000000000007b98     0x1595 ./Debug/application.c.o
+ .debug_info    0x000000000000912d      0x9d7 ./Debug/sciTinyTimber.c.o
+ .debug_info    0x0000000000009b04      0xdba ./Debug/canTinyTimber.c.o
+ .debug_info    0x000000000000a8be      0xef4 ./Debug/driver_src_stm32f4xx_rcc.c.o
 
-.debug_abbrev   0x0000000000000000     0x2214
+.debug_abbrev   0x0000000000000000     0x220b
  .debug_abbrev  0x0000000000000000      0x164 ./Debug/driver_src_stm32f4xx_syscfg.c.o
  .debug_abbrev  0x0000000000000164      0x1a8 ./Debug/driver_src_stm32f4xx_usart.c.o
  .debug_abbrev  0x000000000000030c      0x1c2 ./Debug/driver_src_stm32f4xx_tim.c.o
@@ -781,10 +781,10 @@ OUTPUT(./Debug/RTS-Lab.elf elf32-littlearm)
  .debug_abbrev  0x000000000000112b      0x1ea ./Debug/driver_src_stm32f4xx_exti.c.o
  .debug_abbrev  0x0000000000001315      0x256 ./Debug/sioTinyTimber.c.o
  .debug_abbrev  0x000000000000156b      0x28f ./Debug/startup.c.o
- .debug_abbrev  0x00000000000017fa      0x311 ./Debug/application.c.o
- .debug_abbrev  0x0000000000001b0b      0x286 ./Debug/sciTinyTimber.c.o
- .debug_abbrev  0x0000000000001d91      0x28a ./Debug/canTinyTimber.c.o
- .debug_abbrev  0x000000000000201b      0x1f9 ./Debug/driver_src_stm32f4xx_rcc.c.o
+ .debug_abbrev  0x00000000000017fa      0x308 ./Debug/application.c.o
+ .debug_abbrev  0x0000000000001b02      0x286 ./Debug/sciTinyTimber.c.o
+ .debug_abbrev  0x0000000000001d88      0x28a ./Debug/canTinyTimber.c.o
+ .debug_abbrev  0x0000000000002012      0x1f9 ./Debug/driver_src_stm32f4xx_rcc.c.o
 
 .debug_aranges  0x0000000000000000      0x1e8
  .debug_aranges
@@ -818,7 +818,7 @@ OUTPUT(./Debug/RTS-Lab.elf elf32-littlearm)
  .debug_aranges
                 0x00000000000001c8       0x20 ./Debug/driver_src_stm32f4xx_rcc.c.o
 
-.debug_line     0x0000000000000000     0x5583
+.debug_line     0x0000000000000000     0x55bb
  .debug_line    0x0000000000000000      0x28c ./Debug/driver_src_stm32f4xx_syscfg.c.o
  .debug_line    0x000000000000028c      0x608 ./Debug/driver_src_stm32f4xx_usart.c.o
  .debug_line    0x0000000000000894      0xc1b ./Debug/driver_src_stm32f4xx_tim.c.o
@@ -830,10 +830,10 @@ OUTPUT(./Debug/RTS-Lab.elf elf32-littlearm)
  .debug_line    0x00000000000035af      0x375 ./Debug/driver_src_stm32f4xx_exti.c.o
  .debug_line    0x0000000000003924      0x306 ./Debug/sioTinyTimber.c.o
  .debug_line    0x0000000000003c2a      0x3fe ./Debug/startup.c.o
- .debug_line    0x0000000000004028      0x57a ./Debug/application.c.o
- .debug_line    0x00000000000045a2      0x33b ./Debug/sciTinyTimber.c.o
- .debug_line    0x00000000000048dd      0x4a8 ./Debug/canTinyTimber.c.o
- .debug_line    0x0000000000004d85      0x7fe ./Debug/driver_src_stm32f4xx_rcc.c.o
+ .debug_line    0x0000000000004028      0x5b2 ./Debug/application.c.o
+ .debug_line    0x00000000000045da      0x33b ./Debug/sciTinyTimber.c.o
+ .debug_line    0x0000000000004915      0x4a8 ./Debug/canTinyTimber.c.o
+ .debug_line    0x0000000000004dbd      0x7fe ./Debug/driver_src_stm32f4xx_rcc.c.o
 
 .debug_str      0x0000000000000000     0x3981
  .debug_str     0x0000000000000000      0x300 ./Debug/driver_src_stm32f4xx_syscfg.c.o

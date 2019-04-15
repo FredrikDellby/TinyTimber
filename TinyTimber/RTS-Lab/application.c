@@ -36,6 +36,7 @@ void reader(App*, int);
 void receiver(App*, int);
 void buttonPressed(App*, int);
 void printCANMsg(App*, CANMsg*);
+void regulator(App*, int);
 
 App app = {initObject(), NULL, BUF_INIT, 0, 0, 0, 0};
 Player player = initPlayer();
@@ -55,12 +56,13 @@ void canBufferInit(CANBuffer *self) {
 }
 
 void runCANBufferTask(CANBuffer *self, int unused) {
+	SCI_WRITE(&sci0, "CANBufferTask...\n");
 	CANMsg msg = self->msgQueue[self->first++];
 	self->size--;
 	printCANMsg(&app, &msg);
 	
 	if (self->size > 0) {
-		SEND(MSEC(1000), MSEC(100), self, printCANMsg, unused);
+		SEND(MSEC(1000), MSEC(100), self, printCANMsg, 0);
 	}
 }
 
@@ -89,6 +91,7 @@ void receiver(App *self, int unused) {
 		interArrivalTime = T_SAMPLE(&tim1);
 		if (canBuf.size > 0) {
 			canBuf.msgQueue[++canBuf.last] = msg;
+			runCANBufferTask(&canBuf,unused );
 		} else if (interArrivalTime < MSEC(1000)) {
 			canBuf.msgQueue[++canBuf.last] = msg;
 			SEND(MSEC(1000) - interArrivalTime, MSEC(100), self, printCANMsg, unused);
@@ -97,6 +100,7 @@ void receiver(App *self, int unused) {
 		}
 	}
 }
+
 
 void reader(App *self, int c) {
 	int value;
@@ -139,6 +143,9 @@ void reader(App *self, int c) {
 void buttonPressed(App *self, int unused){
 	int interArrivalTime = 0; 
 	int tempo = 0;
+	int i = 0;
+
+
 	//sio_toggle(&sysIO0, 0);
 	CANMsg msg;
 	//char *ptr1 = self->buf, *ptr2 = msg.buff;
@@ -152,36 +159,31 @@ void buttonPressed(App *self, int unused){
 
 		T_RESET(&tim0);
 		if (interArrivalTime > MIN_INTER_ARRIVAL_TIME) {
-		snprintf(self->buf, BUF_SIZE, "Counter: %d \n", self->counter);
-				SCI_WRITE(&sci0, self->buf);
 			if(self->counter == 0){
 				self->t1 = interArrivalTime;
-				snprintf(self->buf, BUF_SIZE, "T1: %d ms\n", self->t1);
-				SCI_WRITE(&sci0, self->buf);
 				self->counter++;
 			}
 			else if(self->counter == 1){
-				int sum = self->t1 - interArrivalTime;
-				snprintf(self->buf, BUF_SIZE, "sum: %d ms\n", sum);
-				SCI_WRITE(&sci0, self->buf);
-				if(self->t1 - interArrivalTime < 99){
+				if(abs(self->t1 - interArrivalTime) < 99){
 					self->t2 = interArrivalTime;
 					self->counter++;
-					snprintf(self->buf, BUF_SIZE, "T2: %d ms\n", self->t2);
-					SCI_WRITE(&sci0, self->buf);
 				}
 				else{
+					self->t1 = interArrivalTime;
 					self->counter = 0;
 				}
 			}
 			else {
-				if(self->t2 - interArrivalTime < 99){
+				if((abs(self->t2 - interArrivalTime) < 99)&& (abs(self->t1 - interArrivalTime) < 99) ){
 					self->t3 = interArrivalTime;
 					tempo = 60000/((self->t1 + self->t2 + self->t3)/3); 
 					snprintf(self->buf, BUF_SIZE, "Tempo: %d BPM\n", tempo);
 					SCI_WRITE(&sci0, self->buf);
 					
 					
+				}
+				else{
+					self->t1 = interArrivalTime;
 				}
 			self->counter = 0;
 			
