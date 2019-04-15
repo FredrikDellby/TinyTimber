@@ -376,8 +376,8 @@ END GROUP
                 0x0000000020005c74                setPlayer
                 0x0000000020005c90                printCANMsg
                 0x0000000020005cf4                receiver
-                0x0000000020005df8                reader
-                0x0000000020005f24                buttonPressed
+                0x0000000020005df0                reader
+                0x0000000020005f1c                buttonPressed
                 0x00000000200060dc                startApp
                 0x0000000020006144                main
  .text          0x00000000200061b0      0x294 ./Debug/sciTinyTimber.c.o
@@ -752,7 +752,7 @@ END GROUP
                 [!provide]                        PROVIDE (_end = _ebss)
 OUTPUT(./Debug/RTS-Lab.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000     0xb7b2
+.debug_info     0x0000000000000000     0xb7a5
  .debug_info    0x0000000000000000      0x2c4 ./Debug/driver_src_stm32f4xx_syscfg.c.o
  .debug_info    0x00000000000002c4      0xa68 ./Debug/driver_src_stm32f4xx_usart.c.o
  .debug_info    0x0000000000000d2c     0x1e26 ./Debug/driver_src_stm32f4xx_tim.c.o
@@ -764,10 +764,10 @@ OUTPUT(./Debug/RTS-Lab.elf elf32-littlearm)
  .debug_info    0x00000000000063cc      0x383 ./Debug/driver_src_stm32f4xx_exti.c.o
  .debug_info    0x000000000000674f      0x961 ./Debug/sioTinyTimber.c.o
  .debug_info    0x00000000000070b0      0xae8 ./Debug/startup.c.o
- .debug_info    0x0000000000007b98     0x1595 ./Debug/application.c.o
- .debug_info    0x000000000000912d      0x9d7 ./Debug/sciTinyTimber.c.o
- .debug_info    0x0000000000009b04      0xdba ./Debug/canTinyTimber.c.o
- .debug_info    0x000000000000a8be      0xef4 ./Debug/driver_src_stm32f4xx_rcc.c.o
+ .debug_info    0x0000000000007b98     0x1588 ./Debug/application.c.o
+ .debug_info    0x0000000000009120      0x9d7 ./Debug/sciTinyTimber.c.o
+ .debug_info    0x0000000000009af7      0xdba ./Debug/canTinyTimber.c.o
+ .debug_info    0x000000000000a8b1      0xef4 ./Debug/driver_src_stm32f4xx_rcc.c.o
 
 .debug_abbrev   0x0000000000000000     0x220b
  .debug_abbrev  0x0000000000000000      0x164 ./Debug/driver_src_stm32f4xx_syscfg.c.o
@@ -818,7 +818,7 @@ OUTPUT(./Debug/RTS-Lab.elf elf32-littlearm)
  .debug_aranges
                 0x00000000000001c8       0x20 ./Debug/driver_src_stm32f4xx_rcc.c.o
 
-.debug_line     0x0000000000000000     0x55bb
+.debug_line     0x0000000000000000     0x55bd
  .debug_line    0x0000000000000000      0x28c ./Debug/driver_src_stm32f4xx_syscfg.c.o
  .debug_line    0x000000000000028c      0x608 ./Debug/driver_src_stm32f4xx_usart.c.o
  .debug_line    0x0000000000000894      0xc1b ./Debug/driver_src_stm32f4xx_tim.c.o
@@ -830,10 +830,10 @@ OUTPUT(./Debug/RTS-Lab.elf elf32-littlearm)
  .debug_line    0x00000000000035af      0x375 ./Debug/driver_src_stm32f4xx_exti.c.o
  .debug_line    0x0000000000003924      0x306 ./Debug/sioTinyTimber.c.o
  .debug_line    0x0000000000003c2a      0x3fe ./Debug/startup.c.o
- .debug_line    0x0000000000004028      0x5b2 ./Debug/application.c.o
- .debug_line    0x00000000000045da      0x33b ./Debug/sciTinyTimber.c.o
- .debug_line    0x0000000000004915      0x4a8 ./Debug/canTinyTimber.c.o
- .debug_line    0x0000000000004dbd      0x7fe ./Debug/driver_src_stm32f4xx_rcc.c.o
+ .debug_line    0x0000000000004028      0x5b4 ./Debug/application.c.o
+ .debug_line    0x00000000000045dc      0x33b ./Debug/sciTinyTimber.c.o
+ .debug_line    0x0000000000004917      0x4a8 ./Debug/canTinyTimber.c.o
+ .debug_line    0x0000000000004dbf      0x7fe ./Debug/driver_src_stm32f4xx_rcc.c.o
 
 .debug_str      0x0000000000000000     0x3981
  .debug_str     0x0000000000000000      0x300 ./Debug/driver_src_stm32f4xx_syscfg.c.o

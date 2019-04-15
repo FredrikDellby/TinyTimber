@@ -62,7 +62,7 @@ void runCANBufferTask(CANBuffer *self, int unused) {
 	printCANMsg(&app, &msg);
 	
 	if (self->size > 0) {
-		SEND(MSEC(1000), MSEC(100), self, printCANMsg, 0);
+		SEND(MSEC(1000), MSEC(100), self, runCANBufferTask, unused);
 	}
 }
 
@@ -91,10 +91,10 @@ void receiver(App *self, int unused) {
 		interArrivalTime = T_SAMPLE(&tim1);
 		if (canBuf.size > 0) {
 			canBuf.msgQueue[++canBuf.last] = msg;
-			runCANBufferTask(&canBuf,unused );
+			//runCANBufferTask(&canBuf,unused );
 		} else if (interArrivalTime < MSEC(1000)) {
 			canBuf.msgQueue[++canBuf.last] = msg;
-			SEND(MSEC(1000) - interArrivalTime, MSEC(100), self, printCANMsg, unused);
+			SEND(MSEC(1000) - interArrivalTime, MSEC(100), self, runCANBufferTask, unused);
 		} else {
 			printCANMsg(self, &msg);
 		}
@@ -143,7 +143,6 @@ void reader(App *self, int c) {
 void buttonPressed(App *self, int unused){
 	int interArrivalTime = 0; 
 	int tempo = 0;
-	int i = 0;
 
 
 	//sio_toggle(&sysIO0, 0);
@@ -164,7 +163,7 @@ void buttonPressed(App *self, int unused){
 				self->counter++;
 			}
 			else if(self->counter == 1){
-				if(abs(self->t1 - interArrivalTime) < 99){
+				if(abs(self->t1 - interArrivalTime) < 100){
 					self->t2 = interArrivalTime;
 					self->counter++;
 				}
@@ -174,7 +173,7 @@ void buttonPressed(App *self, int unused){
 				}
 			}
 			else {
-				if((abs(self->t2 - interArrivalTime) < 99)&& (abs(self->t1 - interArrivalTime) < 99) ){
+				if((abs(self->t2 - interArrivalTime) < 100)&& (abs(self->t1 - interArrivalTime) < 100) ){
 					self->t3 = interArrivalTime;
 					tempo = 60000/((self->t1 + self->t2 + self->t3)/3); 
 					snprintf(self->buf, BUF_SIZE, "Tempo: %d BPM\n", tempo);
@@ -185,7 +184,7 @@ void buttonPressed(App *self, int unused){
 				else{
 					self->t1 = interArrivalTime;
 				}
-			self->counter = 0;
+				self->counter = 0;
 			
 		}
 	
