@@ -9,7 +9,7 @@ Debug/up_up_up_application.c.o: ../../../application.c TinyTimber.h \
  /home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/driver/inc/stm32f4xx_usart.h \
  canTinyTimber.h \
  /home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/driver/inc/stm32f4xx_can.h \
- ../../../application.h sioTinyTimber.h \
+ application.h sioTinyTimber.h \
  /home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/driver/inc/stm32f4xx_gpio.h \
  /home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/driver/inc/stm32f4xx_exti.h
 
@@ -35,7 +35,7 @@ canTinyTimber.h:
 
 /home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/driver/inc/stm32f4xx_can.h:
 
-../../../application.h:
+application.h:
 
 sioTinyTimber.h:
 

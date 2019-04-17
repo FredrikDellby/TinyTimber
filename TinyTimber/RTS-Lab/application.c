@@ -69,14 +69,14 @@ void receiver(Controller *self, int unused) {
 	CAN_RECEIVE(&can0, &msg);
 	Time interArrivalTime;
 	CAN_RECEIVE(&can0, &msg);
-	if (self->firstCANMsgReceived == 0) {
-		self->firstCANMsgReceived = 1;
-		T_RESET(&tim1);
+	//if (self->firstCANMsgReceived == 0) {
+		//self->firstCANMsgReceived = 1;
+		//T_RESET(&tim1);
 		printCANMsg(self, &msg);
-	}
-	else {
-		interArrivalTime = T_SAMPLE(&tim1);
-		T_RESET(&tim1);
+	//}
+	//else {
+		//interArrivalTime = T_SAMPLE(&tim1);
+		//T_RESET(&tim1);
 		/*if(canBuf.size < 10){
 			//if((canBuf.size > 0 ) )  {
 				//canBuf.msgQueue[++canBuf.last] = msg;
@@ -89,10 +89,10 @@ void receiver(Controller *self, int unused) {
 				
 				//SEND(MSEC(1000) - interArrivalTime, MSEC(100), self, runCANBufferTask, unused);
 			} else {*/
-				printCANMsg(self, &msg);
+			//	printCANMsg(self, &msg);
 			//}
 		//}
-	}
+	//}
     if(self->slave){
 		switch(msg.buff[0]){
 			case 'v':
@@ -163,7 +163,9 @@ void receiver(Controller *self, int unused) {
 		}
 	}
 void buttonPressed(Controller *self, int unused){
-	int interArrivalTime = 0; 
+	int sec, int msec;
+	int interArrivalTime = 0;
+	
 	int tempo = 0;
 
 
@@ -175,8 +177,10 @@ void buttonPressed(Controller *self, int unused){
 		T_RESET(&tim0);
 		
 	} else {
-	
-		interArrivalTime = MSEC_OF(T_SAMPLE(&tim0));
+		interArrivalTime = 200//SEC_OF(T_SAMPLE(&tim0));
+		//sec = SEC_OF(T_SAMPLE(&tim0));
+		//msec = MSEC_OF(T_SAMPLE(&tim0));
+		//interArrivalTime = sec*1000 + msec;
 
 		T_RESET(&tim0);
 		if (interArrivalTime > MIN_INTER_ARRIVAL_TIME) {

@@ -33,6 +33,7 @@ char *DAC2 = DAC_ADDR;
         ((Time)MSEC((60000 / x))); //conversion macro for BPM to TIME (Time value)
 
 
+
 //Structs for different object types
 typedef struct {
     Object super;
@@ -74,6 +75,11 @@ typedef struct {
 	int t3;
 	uchar msgIndex;
 } Controller;
+
+typedef struct{
+	Object super;
+	int half_period, on;
+}BlinkTask;
 
 //increase this each quarter note (i.e. twice per half note and once every 2 8ths)
 int incClock (Controller *self, int unused);
