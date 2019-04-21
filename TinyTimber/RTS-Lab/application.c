@@ -18,7 +18,6 @@ typedef struct {
 
 Voice voice0 = {initObject(), 0, USEC(500), 7, 1, 1}; //defaults: wave low, 1kHz, 7 volume, deadline on, mute on
 Controller controller = {initObject(), MSEC(500), 0, 0, 0, 1, SLAVE, 0, 0, 0, 0, 1, 31, 0, 0, 0, 0, 0, 0, 0, 0}; //defaults: Tempo: 120BPM, first note: 0, offset: 0, playing: FALSE, mute: TRUE, slave: FALSE
-Load load = {initObject(), 13500, 0, 0};
 Serial sci0 = initSerial(SCI_PORT0, &controller, reader); //reader
 Can can0 = initCan(CAN_PORT0, &controller, receiver);
 SysIO sysIO0 = initSysIO(SIO_PORT0, &controller, buttonPressed);
@@ -345,50 +344,7 @@ int noteReader(Controller *self, int c) {
 			msg.buff[0] = 'v';
 			msg.buff[1] = getVolume(&voice0, 0);
 		break;
-/* Debug code
-		//decrease distortion
-		case 'o':
-		case 'O': 
-            sprintf(tmp, "%d", loadDec(&load,0));
-            SCI_WRITE(&sci0, "Loop value is now: ");
-            SCI_WRITE(&sci0, tmp);
-            SCI_WRITE(&sci0, "\n");
-            break;
 
-		//increase distortion
-		case 'p':
-		case 'P': 
-            sprintf(tmp, "%d", loadInc(&load,0));
-            SCI_WRITE(&sci0, "Loop value is now: ");
-            SCI_WRITE(&sci0, tmp);
-            SCI_WRITE(&sci0, "\n");
-            break;
-
-		case '1': 
-		changePeriod(&voice0, 500);
-		SCI_WRITE(&sci0, "Frequency: 1000 Hz\n");
-		break;
-		
-		case '2': 
-		changePeriod(&voice0, 650);
-		SCI_WRITE(&sci0, "Frequency: 769 Hz\n");
-		break;
-		
-		case '3': 
-		changePeriod(&voice0, 931);
-		SCI_WRITE(&sci0, "Frequency: 537 Hz\n");
-		break;
-
-		case 'd':
-		case 'D': deadlineLoad(&load,0);
-		deadlineVoice(&voice0,0);
-		if(getDeadline(&voice0,0)){
-			SCI_WRITE(&sci0, "Deadline enabled\n");
-		}else{
-			SCI_WRITE(&sci0, "Deadline disabled\n");
-		}
-		break;
-	*/
 		case ' ':
 			ASYNC(self, startSong, 0);
 			SCI_WRITE(&sci0, "Starting Song");
@@ -415,30 +371,7 @@ int noteReader(Controller *self, int c) {
 			msg.buff[0] = 'e';
 			self->slaves = 1;
 		break;
-     /*       
-        case '+':
-            ASYNC(self, tempoChange, 1);
-            break;
-        
-        case '-':
-            ASYNC(self, tempoChange, -1);
-            break;
-			 * */
-              
-              /*
-		case 'a':
-        case 'A':
-            ASYNC(self, offsetChange, -1);
-
-
-            break;
-        
-        case 's':
-        case 'S':
-            ASYNC(self, offsetChange, 1);
-
-            break;
-			 */	
+		
 		//master change case
 		case 'u':
 		case 'U':
@@ -769,64 +702,6 @@ int deadlineVoice(Voice *self, int unused) {
 
 //----------------------------------------------------VOICE----------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------
-//----------------------------------------------------LOAD-----------------------------------------------------------
-
-int getLoad(Load *self, int unused) {
-	return self->background_loop_range;
-}
-
-int loadInc(Load *self, int unused) {
-	//if(self-> background_loop_range < 8000){
-	self->background_loop_range = self->background_loop_range + 500;
-	return 0;
-	//}
-}
-
-int loadDec(Load *self, int unused) {
-	if (self->background_loop_range > 1000) {
-		self->background_loop_range = self->background_loop_range - 500;
-	}
-	return 0;
-}
-
-int deadlineLoad(Load *self, int unused) {
-	return self->deadline = !self->deadline;
-}
-
-int background(Load *self, int unused) {
-	long time_val = USEC_OF(CURRENT_OFFSET());
-	char tmp[20];
-	if (self->counter < 500) {
-		for (int i = 0; i < self->background_loop_range; i++) {}
-		long time_val2 = USEC_OF(CURRENT_OFFSET());
-		time_val = time_val2 - time_val;
-		if (self->max < time_val) self->max = time_val; // MAX(old, new)
-		self->sum = self->sum + time_val;
-		self->counter++;
-		if (self->deadline) {
-			SEND(USEC(1300), USEC(1300), self, background, 0);
-		} else {
-			AFTER(USEC(1300), self, background, 0);
-		}
-	} else {
-		sprintf(tmp, "%ld", (self->sum));
-		SCI_WRITE(&sci0, "Sum WCET of load is: ");
-		SCI_WRITE(&sci0, tmp);
-		SCI_WRITECHAR(&sci0, '\n');	
-		sprintf(tmp, "%ld", self->max);
-		SCI_WRITE(&sci0, "Max WCET of load is: ");
-		SCI_WRITE(&sci0, tmp);
-		SCI_WRITECHAR(&sci0, '\n');
-		sprintf(tmp, "%ld", (self->sum/500));
-		SCI_WRITE(&sci0, "AM WCET of load is: ");
-		SCI_WRITE(&sci0, tmp);
-		SCI_WRITECHAR(&sci0, '\n');
-	}
-	return 0;
-}
-
-//----------------------------------------------------LOAD-----------------------------------------------------------
-//-------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------MISC-----------------------------------------------------------
 
 
@@ -838,7 +713,6 @@ void startApp(Controller *self, int arg) {
 	//SCI_WRITE(&sci0, "Hello. John player program start\n");
 	ASYNC(&voice0, squareWave, USEC(500));
 	controller.slaves = 1;
-	//ASYNC(&load, background, 0);
 	//ASYNC(&controller, startSong, 0);
 }
 

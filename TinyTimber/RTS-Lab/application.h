@@ -13,60 +13,49 @@
 
 //The periods for the different notes avalible in brother John
 const int periods[] = { 2024, 1911, 1803, 1702, 1607,     //-10 to -6
-                        1516, 1431, 1351, 1275, 1203,     //-5 to -1
-                        1136, 1072, 1012, 955,  901,      //0 to 4
-                        851,  803,  758,  715,  675,      //5 to 9
-                        637,  601,  568,  536,  506};     //10 to 14
-                        
+						S1516, 1431, 1351, 1275, 1203,     //-5 to -1
+						1136, 1072, 1012, 955,  901,      //0 to 4
+						851,  803,  758,  715,  675,      //5 to 9
+						637,  601,  568,  536,  506};     //10 to 14
+
 const int john[] = {0, 2, 4, 0, 0, 2, 4, 0, 4, 5, 7, 4, 5, 7, 7, 9, 7, 5, 4, 0, 7, 9, 7, 5, 4, 0, 0, -5, 0, 0, -5, 0}; //the "note sheet" for brother John
 const int beats[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 2, 1, 1, 2};
 const int safe_notes[] = {1,1,1,1,1,1,1,1,1,1,0,0,1,1,0,0,0,0,1,1,0,0,1,1,1,1,0,0,1,1,0,0}; //indicates "safe" transitions in quarter note increments
 char *DAC2 = DAC_ADDR;
 
 #define TONE(x) \
-        ((Time)(periods[(x) + 10])); //conversion macro for tones 
+		((Time)(periods[(x) + 10])); //conversion macro for tones 
 
 #define TIME_TO_BPM(x) \
-        ((int)(60000 / MSEC_OF(x))); //conversion macro for time to BPM (int number)
-        
+		((int)(60000 / MSEC_OF(x))); //conversion macro for time to BPM (int number)
+
 #define BPM_TO_TIME(x) \
-        ((Time)MSEC((60000 / x))); //conversion macro for BPM to TIME (Time value)
-
-
+		((Time)MSEC((60000 / x))); //conversion macro for BPM to TIME (Time value)
 
 //Structs for different object types
 typedef struct {
-    Object super;
-   	char DAC_OUTPUT;
+	Object super;
+	char DAC_OUTPUT;
 	Time period;
 	int volume, deadline, mute;
 } Voice;
 
 typedef struct {
 	Object super;
-	int background_loop_range;
-	int deadline;
+	Time tempo;
 	int counter;
-	long sum;
-	long max;
-} Load;
-
-typedef struct {
-    Object super;
-    Time tempo;
-    int counter;
-    int offset;
-    int play;
-    int mute;
-    char slave;
-    int count;
-    char buf[20];
-    int myNum;
-    int canon;
-    int slaves;
-    int clockIndex;
-    int eigth;
-    int newTempo;
+	int offset;
+	int play;
+	int mute;
+	char slave;
+	int count;
+	char buf[20];
+	int myNum;
+	int canon;
+	int slaves;
+	int clockIndex;
+	int eigth;
+	int newTempo;
 	int buttonPressedFirstTime;
 	int firstCANMsgReceived;
 	int c;
@@ -79,7 +68,7 @@ typedef struct {
 typedef struct{
 	Object super;
 	int half_period, on;
-}BlinkTask;
+} BlinkTask;
 
 //increase this each quarter note (i.e. twice per half note and once every 2 8ths)
 int incClock (Controller *self, int unused);
@@ -102,7 +91,6 @@ int volumeSet(Voice*, int);
 int offsetSet(Controller*, int);
 int canonSet(Controller*, int);
 int sendChangeTempo(Controller*, int);
-
 
 /*Gets the keyboard interrupts and parses the command,
  * and then executes it.
@@ -138,41 +126,12 @@ int squareWave(Voice *self, int unused);
 int getDeadline(Voice *self, int unused);
 int deadlineVoice(Voice *self, int unused);
 
-
-
-//does what the names entail
-int getLoad(Load *self, int unused);
-int loadInc(Load *self, int unused);
-int loadDec(Load *self, int unused);
-
-//for deadline enable/disable
-int deadlineLoad(Load *self, int unused);
-
-/*Creates "dead time" on the processor by 
- * running an empty loop x number of times,
- * where x is the value of 
- * self->background_loop_range.
- * 
- * Calls itself indefinitly with an SEND
- * call, with the voice's period as the 
- * offset and 100 usec as deadline. 
- * 
- * If deadlines are disabled the call is 
- * instead an AFTER with the same offset
- * as the SEND call
- */
-int background(Load *self, int unused);
-
-
-
-
 const char *text[] = {"Bro","der ","Ja","cob.\n",
-                      "Bro","der ","Ja","cob.\n",
-                      "So","ver ","du?\n",
-                      "So","ver ","du?\n",
-                      "Hör ","du ","in","te ","klo","ckan?\n",
-                      "Hör ","du ","in","te ","klo","ckan?\n",
-                      "Ding ", "ding ","dong.\n",
-                      "Ding ", "ding ","dong.\n\n\n"};
-
+					  "Bro","der ","Ja","cob.\n",
+					  "So","ver ","du?\n",
+					  "So","ver ","du?\n",
+					  "Hör ","du ","in","te ","klo","ckan?\n",
+					  "Hör ","du ","in","te ","klo","ckan?\n",
+					  "Ding ", "ding ","dong.\n",
+					  "Ding ", "ding ","dong.\n\n\n"};
 #endif
