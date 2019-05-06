@@ -155,7 +155,8 @@ void receiver(Controller *self, int unused) {
 }
 
 void buttonPressed(Controller *self, int unused) {
-	int sec, int msec;
+	int sec;
+	int msec;
 	int interArrivalTime = 0;
 	int tempo = 0;
 	//sio_toggle(&sysIO0, 0);
@@ -165,13 +166,15 @@ void buttonPressed(Controller *self, int unused) {
 		self->buttonPressedFirstTime = 1;
 		T_RESET(&tim0);
 	} else {
-		interArrivalTime = 200//SEC_OF(T_SAMPLE(&tim0));
+		interArrivalTime = 200;
+		//SEC_OF(T_SAMPLE(&tim0));
 		//sec = SEC_OF(T_SAMPLE(&tim0));
 		//msec = MSEC_OF(T_SAMPLE(&tim0));
 		//interArrivalTime = sec*1000 + msec;
 
 		T_RESET(&tim0);
 		if (interArrivalTime > MIN_INTER_ARRIVAL_TIME) {
+
 			if (self->c == 0) {
 				self->t1 = interArrivalTime;
 				self->c++;
@@ -244,7 +247,16 @@ int noteReader(Controller *self, int c) {
 			send = 0;
 		break;
 		//end number parser
-
+		
+		//Play the next tone in the song
+		case 'y':
+		case 'Y':
+			self->counter++;
+			ASYNC(self, playTone, 0);
+		break;
+			
+			
+		
 		//setTempo with parsed number
 		case 't':
 		case 'T':
@@ -253,7 +265,7 @@ int noteReader(Controller *self, int c) {
 			self->myNum = atoi(self->buf);
 			sprintf(tmp, "myNum: %d \n", self->myNum);
 			SCI_WRITE(&sci0, tmp);
-			if (self->play && self->myNum <= MAX_BPM && self->myNum >= MIN_BPM { //if we're playing we have to await a safe note. Queue a change
+			if (self->play && self->myNum <= MAX_BPM && self->myNum >= MIN_BPM ){ //if we're playing we have to await a safe note. Queue a change
 				self->newTempo = self->myNum;
 				sprintf(tmp, "newTempo: %d \n", self->newTempo);
 				SCI_WRITE(&sci0, tmp);
@@ -473,6 +485,42 @@ int startSong(Controller *self, int unused) {
 		ASYNC(self, nextNote, 0);
 	}
 	return 0;
+}
+
+int playTone(Controller *self, int n){
+	char tmp[20];
+	SCI_WRITE(&sci0, "playTone\n");
+	
+	//if (self->play) {
+		if (self->counter == 32) {
+			self->counter = 0;
+		}
+		Time b;
+		switch (beats[self->counter]) {
+		//eight note
+			case 0: b = (self->tempo)/2;
+			break;
+
+			//half note
+			case 2: b = (self->tempo)*2;
+			break;
+
+			//quarter note
+			default: b = (self->tempo);
+			break;
+		}
+		sprintf(tmp, "couner: %d \n", self->counter);
+		SCI_WRITE(&sci0, tmp);
+		int p = periods[john[self ->counter] + self->offset + 10];
+		SYNC(&voice0, changeTone, p);
+		//if (self->mute) SYNC(&voice0, mute, 1);
+		//SEND(b-MSEC(50), USEC(100), &voice0, mute, 1);
+		//SEND(b, USEC(1000),&voice0, mute, 1);
+		ASYNC(&voice0, mute, 0);
+		SEND(b, USEC(100), &voice0, mute, 1);
+		SEND(MSEC(0.85)*b, USEC(100), &voice0, mute, 0);
+		//SEND(b, USEC(100), self, mute, 1);
+	//}
 }
 
 int nextNote(Controller *self, int n) {

@@ -52,8 +52,8 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
-    <File Name="application.h"/>
-    <File Name="../../../application.c"/>
+    <File Name="../../../../Downloads/application.h"/>
+    <File Name="application.c"/>
     <File Name="sioTinyTimber.h"/>
     <File Name="sioTinyTimber.c"/>
     <File Name="sciTinyTimber.c"/>

@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Hanna
-Date                   :=17/04/19
+Date                   :=06/05/19
 CodeLitePath           :=/home/hanna/.codelite
 LinkerName             :=/home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/arm-none-eabi-g++
 SharedObjectLinkerName :=/home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-arm-none-eabi-8-2018-q4-major/bin/arm-none-eabi-g++ -shared -fPIC
@@ -60,8 +60,8 @@ AS       := /home/hanna/Documents/gcc-arm-none-eabi-8-2018-q4-major-linux/gcc-ar
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/driver_src_stm32f4xx_syscfg.c$(ObjectSuffix) $(IntermediateDirectory)/driver_src_stm32f4xx_usart.c$(ObjectSuffix) $(IntermediateDirectory)/driver_src_stm32f4xx_tim.c$(ObjectSuffix) $(IntermediateDirectory)/driver_src_stm32f4xx_gpio.c$(ObjectSuffix) $(IntermediateDirectory)/driver_src_stm32f4xx_dac.c$(ObjectSuffix) $(IntermediateDirectory)/up_up_up_application.c$(ObjectSuffix) $(IntermediateDirectory)/dispatch.s$(ObjectSuffix) $(IntermediateDirectory)/driver_src_stm32f4xx_exti.c$(ObjectSuffix) $(IntermediateDirectory)/sioTinyTimber.c$(ObjectSuffix) $(IntermediateDirectory)/driver_src_stm32f4xx_can.c$(ObjectSuffix) \
-	$(IntermediateDirectory)/TinyTimber.c$(ObjectSuffix) $(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IntermediateDirectory)/sciTinyTimber.c$(ObjectSuffix) $(IntermediateDirectory)/canTinyTimber.c$(ObjectSuffix) $(IntermediateDirectory)/driver_src_stm32f4xx_rcc.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/driver_src_stm32f4xx_syscfg.c$(ObjectSuffix) $(IntermediateDirectory)/driver_src_stm32f4xx_usart.c$(ObjectSuffix) $(IntermediateDirectory)/driver_src_stm32f4xx_tim.c$(ObjectSuffix) $(IntermediateDirectory)/driver_src_stm32f4xx_gpio.c$(ObjectSuffix) $(IntermediateDirectory)/driver_src_stm32f4xx_dac.c$(ObjectSuffix) $(IntermediateDirectory)/dispatch.s$(ObjectSuffix) $(IntermediateDirectory)/driver_src_stm32f4xx_exti.c$(ObjectSuffix) $(IntermediateDirectory)/sioTinyTimber.c$(ObjectSuffix) $(IntermediateDirectory)/driver_src_stm32f4xx_can.c$(ObjectSuffix) $(IntermediateDirectory)/TinyTimber.c$(ObjectSuffix) \
+	$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IntermediateDirectory)/application.c$(ObjectSuffix) $(IntermediateDirectory)/sciTinyTimber.c$(ObjectSuffix) $(IntermediateDirectory)/canTinyTimber.c$(ObjectSuffix) $(IntermediateDirectory)/driver_src_stm32f4xx_rcc.c$(ObjectSuffix) 
 
 
 
@@ -137,14 +137,6 @@ $(IntermediateDirectory)/driver_src_stm32f4xx_dac.c$(DependSuffix): driver/src/s
 $(IntermediateDirectory)/driver_src_stm32f4xx_dac.c$(PreprocessSuffix): driver/src/stm32f4xx_dac.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/driver_src_stm32f4xx_dac.c$(PreprocessSuffix) driver/src/stm32f4xx_dac.c
 
-$(IntermediateDirectory)/up_up_up_application.c$(ObjectSuffix): ../../../application.c $(IntermediateDirectory)/up_up_up_application.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/hanna/Documents/application.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/up_up_up_application.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/up_up_up_application.c$(DependSuffix): ../../../application.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/up_up_up_application.c$(ObjectSuffix) -MF$(IntermediateDirectory)/up_up_up_application.c$(DependSuffix) -MM ../../../application.c
-
-$(IntermediateDirectory)/up_up_up_application.c$(PreprocessSuffix): ../../../application.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/up_up_up_application.c$(PreprocessSuffix) ../../../application.c
-
 $(IntermediateDirectory)/dispatch.s$(ObjectSuffix): dispatch.s $(IntermediateDirectory)/dispatch.s$(DependSuffix)
 	$(AS) "/home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/dispatch.s" $(ASFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/dispatch.s$(ObjectSuffix) -I$(IncludePath)
 $(IntermediateDirectory)/dispatch.s$(DependSuffix): dispatch.s
@@ -192,6 +184,14 @@ $(IntermediateDirectory)/startup.c$(DependSuffix): startup.c
 
 $(IntermediateDirectory)/startup.c$(PreprocessSuffix): startup.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/startup.c$(PreprocessSuffix) startup.c
+
+$(IntermediateDirectory)/application.c$(ObjectSuffix): application.c $(IntermediateDirectory)/application.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/application.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/application.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/application.c$(DependSuffix): application.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/application.c$(ObjectSuffix) -MF$(IntermediateDirectory)/application.c$(DependSuffix) -MM application.c
+
+$(IntermediateDirectory)/application.c$(PreprocessSuffix): application.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/application.c$(PreprocessSuffix) application.c
 
 $(IntermediateDirectory)/sciTinyTimber.c$(ObjectSuffix): sciTinyTimber.c $(IntermediateDirectory)/sciTinyTimber.c$(DependSuffix)
 	$(CC) $(SourceSwitch) "/home/hanna/Documents/TinyTimber/TinyTimber/RTS-Lab/sciTinyTimber.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/sciTinyTimber.c$(ObjectSuffix) $(IncludePath)
